@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.47376718.css",
+    "main.js": "/static/js/main.84b38014.js",
+    "static/js/453.0f4552a2.chunk.js": "/static/js/453.0f4552a2.chunk.js",
+    "static/media/dryy.jpg": "/static/media/dryy.474b26da5886b31bdf81.jpg",
+    "static/media/putt.jpg": "/static/media/putt.614bcd640cfa734342ae.jpg",
+    "static/media/logo.jpg": "/static/media/logo.f688b13da5948e7dc8f0.jpg",
+    "static/media/lolog.jpg": "/static/media/lolog.9727469919eef73b44dd.jpg",
+    "index.html": "/index.html",
+    "main.47376718.css.map": "/static/css/main.47376718.css.map",
+    "main.84b38014.js.map": "/static/js/main.84b38014.js.map",
+    "453.0f4552a2.chunk.js.map": "/static/js/453.0f4552a2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47376718.css",
+    "static/js/main.84b38014.js"
+  ]
+}
