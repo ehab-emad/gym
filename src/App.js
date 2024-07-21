@@ -97,7 +97,7 @@ function App() {
        
 <Routes>
  <Route path='/' element={ <Homepage/>}/>
- <Route path='/login' element={ <Register/>}/>
+ <Route path='/login' element={ <Loginpage/>}/>
  <Route path='/register' element={ <Register/>}/>
  <Route path='/reset' element={ <Reset/>}/>
  <Route path='/counterproducts' element={ <Oneproducts />}/>
