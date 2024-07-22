@@ -1,15 +1,12 @@
 
-[build]
-  publish = "public"
+
+  publish = "npm start"
   command = "npm run build"
 
-[[redirects]]
-  from = "/old-page"
-  to = "/new-page"
-  status = 301
-  force = true
 
-[[redirects]]
+
+
   from = "/"
   to = "/index.html"
   status = 200
+  force = true

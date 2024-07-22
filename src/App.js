@@ -37,20 +37,21 @@ import { Container } from "react-bootstrap";
 // import Createproducts from "./components/admin/createproducts1";
 // import Editproduct from "./components/admin/editproducts1";
 import { getData } from "./store/createslic1";
-import Homepage from "./pages/hompepage";
-import Loginpage from "./pages/loginpage";
-import Register from "./pages/registerpage";
-import Reset from "./pages/resetpage";
-import Oneproducts from "./pages/counterpage";
-import Moree from "./pages/morepage";
-import Cart from "./pages/cartpage";
-import Posts from "./pages/postpage";
-import Checkout from "./pages/checkoutpage";
+import Homepage from "./pages/hompepage/index";
+// import Loginpage from "./pages/loginpage/index";
+import Register from "./pages/registerpage/index";
+import Reset from "./pages/resetpage/index";
+import Oneproducts from "./pages/counterpage/index";
+import Moree from "./pages/morepage/index";
+import Cart from "./pages/cartpage/index";
+import Posts from "./pages/postpage/index";
+import Checkout from "./pages/checkoutpage/index";
 import Order from "./components/admin/order1";
-import Admin from "./pages/adminpage";
-import Createproducts from "./pages/createproductpage";
-import Editproduct from "./pages/editproductspage";
-import Footer1 from "./pages/fooer2";
+import Admin from "./pages/adminpage/index";
+import Createproducts from "./pages/createproductpage/index";
+import Editproduct from "./pages/editproductspage/index";
+import Footer1 from "./pages/fooer2/index";
+import Loginpage from "./pages/loginpage/index";
 // import Createproducts from "./pages/createproductpage/createproducts1";
 // import Editproduct from "./pages/editproductspage/editproducts1";
 
@@ -98,7 +99,7 @@ function App() {
 <Routes>
  <Route path='/' element={ <Homepage/>}/>
  <Route path='/login' element={ <Loginpage/>}/>
- <Route path='/register' element={ <Register/>}/>
+ <Route path='/register' element={ <Registe/>}/>
  <Route path='/reset' element={ <Reset/>}/>
  <Route path='/counterproducts' element={ <Oneproducts />}/>
  <Route path='/more' element={ <Moree title={"الاكثر مبيعا"}/>}/>
