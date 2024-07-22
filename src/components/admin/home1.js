@@ -39,24 +39,24 @@ return(
     <Link to={"/admin/products/orders"}> <button className="btn btn-primary  me-1">orderview</button></Link>
     </Col>
 </Row>
-<table className="table">
+<table style={{width:"340px"}} className="table">
 
-    <thead>
-        <tr>
+    <thead style={{width:"10px"}}>
+        <tr >
 
-            <th>
+            <th className="ko">
 ID
-            </th> <th>
+            </th> <th className="ko">
 Name
-            </th> <th>
+            </th> <th className="ko">
 Category
-            </th> <th>
+            </th> <th className="ko">
 Price
-            </th> <th>
+            </th> <th className="ko">
 Image
-            </th> <th>
+            </th> <th className="ko">
 scope
-            </th><th>
+            </th><th className="ko">
 actions
             </th>
         </tr>
@@ -68,16 +68,16 @@ data.length>0 ?
 return(
     <>
     <tr>
-<td>{item.id}</td>
-<td>{item.title}</td>
-<td>{item.category}</td>
-<td>{item.price}$</td>
-<td><img src={"https://json-server-6-yt8p.onrender.com/" + item.images } width={"100"} alt="..."></img></td>
+<td className="ko">{item.id}</td>
+<td className="ko">{item.title}</td>
+<td className="ko">{item.category}</td>
+<td className="ko">{item.price}$</td>
+<td><img src={"https://json-server-6-yt8p.onrender.com/" + item.images } width={"40"} alt="..."></img></td>
 {/* {console.log("http://localhost:30001/" + item.images)} */}
-<td>{item.scope}</td>
-<td style={{width:"10px",whiteSpace:"nowrap"}}>
-    <Link to={'/admin/products/edit/' + item.id } className="btn btn-danger btn-sm ">تعديل</Link> 
-     <button onClick={()=>deleteproduct(item.id)} className="btn btn-primary btn-sm me-1">حذف</button>
+<td className="ko">{item.scope}</td>
+<td style={{width:"9px",whiteSpace:"nowrap",} } className="d">
+    <Link to={'/admin/products/edit/' + item.id } className="btn btn-danger btn-sm " style={{fontSize:"10px"}}>تعديل</Link> 
+     <button onClick={()=>deleteproduct(item.id)} className="btn btn-primary btn-sm mt-1 d-block ko" >حذف</button>
 </td>
 
 
