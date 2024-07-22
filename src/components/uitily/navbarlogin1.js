@@ -118,6 +118,11 @@ import { Link, useNavigate } from 'react-router-dom';
            
             </NavDropdown>
             </ShowOnLogin>
+            <AdminOnlyLink>
+                  <Link to="/admin/products">
+                    <button className="btn btn-info">Admin</button>
+                  </Link>
+                  </AdminOnlyLink>
             <ShowOnLogin>
             <Nav.Link className=' d-flex align-items-center'  >
             <p className='cart-lentgh'> {carts.length} </p>
@@ -148,12 +153,10 @@ import { Link, useNavigate } from 'react-router-dom';
                        
            
            
-            <Nav.Link><AdminOnlyLink>
+            <Nav.Link>
             <NavDropdown title="Admin" id="navbarScrollingDropdown" style={{color:"red"}}>
               <NavDropdown.Item href="#action3">
-                  <Link to="/admin/products">
-                    <button className="--btn --btn-primary">Admin</button>
-                  </Link>
+            
                 </NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
@@ -163,7 +166,7 @@ import { Link, useNavigate } from 'react-router-dom';
                 Something else here
               </NavDropdown.Item>
             </NavDropdown>
-            </AdminOnlyLink>
+           
                 </Nav.Link>
            
            
