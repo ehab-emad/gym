@@ -21,7 +21,7 @@ import Footerss from "./components/uitily/footer1";
 import Navbarlogin from "./components/uitily/navbarlogin1";
 import { useEffect, useState } from "react";
 // import { getData } from "./store/createslic1";
-import { HashRouter, Route, Routes,useNavigate} from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes,useNavigate} from "react-router-dom";
 import { Container } from "react-bootstrap";
 // import Homepage from "./pages/hompepage/homepage1";
 // import Loginpage from "./pages/loginpage/loginpage1";
@@ -74,7 +74,7 @@ import Loginpage from "./pages/loginpage/index";
 // import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
-  const navigate=useNavigate()
+  // const navigate=useNavigate()
 //   const data=useSelector((item)=>item.pro.product)
 //   const dispatch=useDispatch()
 //  const [datas,setdatas]=useState([])
@@ -108,7 +108,7 @@ function App() {
  <Route path='/posts' element={ <Posts/>}/>
  <Route path='/cart/checkout' element={ <Checkout/>}/>
  {/* <Route path='/admin/products/orders'  element={ <Order/>}/> */}
- <Route path='*' element={<navigate to='/' />} />
+ <Route path='*' element={<Navigate to='/' />} />
  {/* <Route path='/admin/cart/payment' element={ <Payment/>}/> */}
 
  <Route
