@@ -152,12 +152,12 @@ const   totalPrice = carts.reduce((acc, cart) => {
                 <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'> <button type="button" class="btn btn-success mx-2 d-flex"  > <span style={{marginLeft:"6px"}}></span>التواصل   <i class="fa-brands fa-whatsapp"></i></button></a>
                         </div>
                     </div>
-                    <div className="my-4"><Link to={'/'} type="button" class="btn btn-success">اضافة منتج </Link></div>
+                    <div className="my-4"><Link to={'/'} type="button" class="btn btn-success">اضافة منتج اخر </Link></div>
                 </div>
                 : <div className="container empty-cart d-flex flex-culom">
-                    <div className="img"><img src={logo} alt="..."/></div>
+                    {/* <div className="img"><img src={logo} style={{width:"400px"}} alt="..."/></div> */}
 
-                    <div><Link to={'/'} type="button" class="btn btn-success">Go To Shopping</Link></div>
+                    <div style={{display:"flex",alignItems:"center",height:"120px",marginTop:"20"}}><Link to={'/'} type="button" class="btn btn-success">اذهب للتسوق</Link></div>
                 </div>
             }
         </>

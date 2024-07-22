@@ -11,7 +11,7 @@ import { ADD_TO_CART } from '../../store/cartslic1'
 
 export default function Posts() {
     // const carts = useSelector((state) => state.carts)
-    const posts = useSelector((state) => state.posts)
+    const posts = useSelector((state) => state.posts.postItems)
     console.log(posts)
 
     const dispatch = useDispatch()
