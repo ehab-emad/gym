@@ -51,7 +51,7 @@ export default function Posts() {
                     <div className='prices'>
                         <div><span className='real-price'>{(post.price+100).toFixed(1)}EG</span></div>
                         <div className='mt-2'> <span className='discounted-price'>
-                            {post.price}$
+                            {post.price}EG
 
                         </span></div>
                     </div>

@@ -145,14 +145,14 @@ const   totalPrice = carts.reduce((acc, cart) => {
                         <div className='total-price' >
                             <h2>Total Price : {totalPrice} EG</h2>
                         </div>
-                        <div className='clear-button d-flex gap-2'>
+                        <div className='clear-button d-flex gap-2 '>
                             {/* <button type="button" class="btn btn-danger" onClick={() => {
                                 dispatch(CLEAR_CART())
                             }}>Clear Cart</button> */}
                 <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'> <button type="button" class="btn btn-success mx-2 d-flex"  > <span style={{marginLeft:"6px"}}></span>التواصل   <i class="fa-brands fa-whatsapp"></i></button></a>
                         </div>
                     </div>
-
+                    <div className="my-4"><Link to={'/'} type="button" class="btn btn-success">اضافة منتج </Link></div>
                 </div>
                 : <div className="container empty-cart d-flex flex-culom">
                     <div className="img"><img src={logo} alt="..."/></div>
