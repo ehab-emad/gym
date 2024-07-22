@@ -99,7 +99,7 @@ function App() {
 <Routes>
  <Route path='/' element={ <Homepage/>}/>
  <Route path='/login' element={ <Loginpage/>}/>
- <Route path='/register' element={ <Registe/>}/>
+ <Route path='/register' element={ <Register/>}/>
  <Route path='/reset' element={ <Reset/>}/>
  <Route path='/counterproducts' element={ <Oneproducts />}/>
  <Route path='/more' element={ <Moree title={"الاكثر مبيعا"}/>}/>
