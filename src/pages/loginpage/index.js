@@ -34,11 +34,11 @@ function Loginpage() {const [email, setEmail] = useState("");
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-
+        toast.success("Login Successful...");
 
         // const user = userCredential.user
         setIsLoading(false);
-        toast.success("Login Successful...");
+       
         navigate("/");
         redirectUser();
         
