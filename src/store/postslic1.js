@@ -12,7 +12,7 @@ export const postsSlice = createSlice({
         : []},
     reducers: {
         addPost: (state , action) => {
-            state.postItems=[]
+            // state.postItems=[]
             const findCart = state.postItems.find((product) => product.id === action.payload.id)
 console.log(findCart)
             if (findCart) {
