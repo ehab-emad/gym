@@ -7,24 +7,21 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const postsSlice = createSlice({
     name: 'posts',
-    initialState:{postItems: localStorage.getItem("postItems")
-        ? JSON.parse(localStorage.getItem("postItems"))
-        : []},
+    initialState:[],
     reducers: {
         addPost: (state , action) => {
-            // state.postItems=[]
-            const findCart = state.postItems.find((product) => product.id === action.payload.id)
+         
+            const findCart = state.find((product) => product.id === action.payload.id)
 console.log(findCart)
             if (findCart) {
 console.log(state.id)
-// findCart.quantity += 1;
+findCart.quantity += 1;
             } else {
-                const cloneCart = { ...action.payload }
+                const cloneCart = { ...action.payload, quantity: 1 }
 console.log(cloneCart)
-state.postItems.push(cloneCart)
+state.push(cloneCart)
             }
-            localStorage.setItem("postItems", JSON.stringify(state.postItems));
-            
+        
         }
        
     },
