@@ -4,7 +4,7 @@ import cartSlice from "./cartslic1";
 import productSlice from "./createslic1";
 import productSlices from "./fetchslic1";
 import categoryslic from "./gategoryslic1";
-import postsSlice from "./postslic1";
+import postsSlice from "./postslic1"
 
 
 export const store=configureStore({
@@ -16,6 +16,7 @@ export const store=configureStore({
     products:productSlices,
     // posts : postsSlice,
     carts :cartSlice,
+    // filterss:counterItem,
     catogeryy:categoryslic,
     // fil : filterSlice
     

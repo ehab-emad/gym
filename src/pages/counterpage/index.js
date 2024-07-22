@@ -9,16 +9,16 @@ import Cardproduct from "../../components/products/productcard1";
 // import Cardproduct from "../components/products/producttcard";
 
 export default function Oneproducts(){
-  const data=useSelector((item)=>item.productss.pro)
+  const data=useSelector((item)=>item.productss.counterItems)
   const dispatch=useDispatch()
   
 
-  useEffect(()=>{
-  dispatch(getData())
+//   useEffect(()=>{
+//   dispatch(getData())
 
-console.log(data)
+// console.log(data)
   
-  },[dispatch])
+//   },[])
   const cat= new Set(data.map((item)=>item.category));
   const des= new Set(data.map((item)=>item.desc))
 return(

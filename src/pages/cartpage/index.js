@@ -149,7 +149,7 @@ const   totalPrice = carts.reduce((acc, cart) => {
                             {/* <button type="button" class="btn btn-danger" onClick={() => {
                                 dispatch(CLEAR_CART())
                             }}>Clear Cart</button> */}
-             <Link to={"/cart/checkout"}>        <button type="button" class="btn btn-success mx-2 d-flex"  > <span style={{marginLeft:"6px"}}><a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'><i class="fa-brands fa-whatsapp"></i></a></span>التواصل</button></Link>
+                <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'> <button type="button" class="btn btn-success mx-2 d-flex"  > <span style={{marginLeft:"6px"}}></span>التواصل   <i class="fa-brands fa-whatsapp"></i></button></a>
                         </div>
                     </div>
 

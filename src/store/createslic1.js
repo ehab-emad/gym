@@ -14,7 +14,11 @@ export const getData = createAsyncThunk('ecommerce/getData', async (_, thunkAPI)
  
 export const productSlice = createSlice({
     name: 'ecommerce',
-    initialState: { product: []},
+    initialState: { product: []
+        ,  counterItems: localStorage.getItem("counterItems")
+        ? JSON.parse(localStorage.getItem("counterItems"))
+        : []
+    },
     reducers: { 
     //      addPost: (state , action) => {
          
@@ -97,9 +101,9 @@ export const productSlice = createSlice({
             // swal("Good Job!", `You are filtered only ${action.payload} product!`, "success")
            const fliter = state.product.filter( (product)=>product.category ===action.payload)
           
-           state.pro=fliter
+           state.counterItems=fliter
            console.log(fliter)
-          
+           localStorage.setItem("counterItems", JSON.stringify(state.counterItems));
         },  
        
     },
