@@ -23,7 +23,7 @@ console.log(state.id)
 console.log(cloneCart)
 state.postitems.push(cloneCart)
             }
-            localStorage.setItem("counterItems", JSON.stringify(state.counterItems));
+            localStorage.setItem("postitems", JSON.stringify(state.postitems));
         }
        
     },

@@ -45,6 +45,7 @@ export default function Posts() {
                         <div className='details'>
                            
                             <div className='category'><span className='dietails-color'></span>{post.category}</div>
+                            <div className='category d-block'><span className='dietails-color'></span>{post.scope}</div>
                         </div>
                     </div>
                     <div className='prices'>
