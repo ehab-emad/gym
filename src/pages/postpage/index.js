@@ -11,7 +11,7 @@ import { ADD_TO_CART } from '../../store/cartslic1'
 
 export default function Posts() {
     // const carts = useSelector((state) => state.carts)
-    const posts = useSelector((state) => state.posts)
+    const posts = useSelector((state) => state.posts.postitems)
     console.log(posts)
 
     const dispatch = useDispatch()
@@ -29,10 +29,9 @@ export default function Posts() {
             {posts.map((post) => {
                 return(<>   <div className='post container'>
                 <div className='imges'>
-                    <img className='one' src={post.images} alt='.....' />
+                    <img className='one' src={"https://json-server-6-yt8p.onrender.com/" + post.images} alt='.....' />
                     <div className='photos'>
                        
-
 
                     </div>
                 </div>
@@ -49,7 +48,7 @@ export default function Posts() {
                         </div>
                     </div>
                     <div className='prices'>
-                        <div><span className='real-price'>{(post.price+100).toFixed(1)}EG</span></div>
+                        <div><span className='real-price'>{(parseInt(post.price,10)+100).toFixed()}EG</span></div>
                         <div className='mt-2'> <span className='discounted-price'>
                             {post.price}EG
 
