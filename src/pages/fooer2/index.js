@@ -66,9 +66,9 @@ export default function Footer1(){
 <h3>تواصل معنا</h3>
   <ul style={{listStyle:"none"}}>
 <li>01010904750 </li>
-<li > <a href="https://www.facebook.com/mostafa.hany.378199?mibextid=LQQJ4d">  صفحة الفيسبوك</a></li>
+<li > <a href="https://www.facebook.com/profile.php?id=61560683181898&mibextid=JRoKGi">  صفحة الفيسبوك</a></li>
 <li>  <a href="https://www.instagram.com/mh.supplements1?igsh=MXF6dHM3aHM0cnpnYw%3D%3D&utm_source=qr">   الانستجرام</a></li>
-<li>  <a href="https://www.facebook.com/mostafa.hany.378199?mibextid=LQQJ4d">   التيك توك</a></li>
+<li>  <a href="https://www.tiktok.com/@mh.supplements?_t=8mqHsEmfl9Z&_r=1">   التيك توك</a></li>
 
 
 
