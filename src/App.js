@@ -89,7 +89,7 @@ function App() {
   
 
 
-       <Hashrouter> 
+       <HashRouter> 
       <Footerss/> 
       <Navbarlogin/>
      
@@ -153,7 +153,7 @@ function App() {
 
 <Footer1/>
 
- </Hashrouter> 
+ </HashRouter> 
          
        </div>
 </div>
