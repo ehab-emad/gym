@@ -107,7 +107,7 @@ import { Link, useNavigate } from 'react-router-dom';
                 </Nav.Link>
                 </NavDropdown.Item>
               <NavDropdown.Item href="#action4">
-                 <Nav.Link style={{color:"white"}} to="/" onClick={logoutUser}>
+                 <Nav.Link style={{color:"gold"}} to="/" onClick={logoutUser}>
                     Logout
                   </Nav.Link>
                  
