@@ -21,7 +21,7 @@ import Footerss from "./components/uitily/footer1";
 import Navbarlogin from "./components/uitily/navbarlogin1";
 import { useEffect, useState } from "react";
 // import { getData } from "./store/createslic1";
-import { BrowserRouter, Navigate, Route, Routes,useNavigate} from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes,useNavigate} from "react-router-dom";
 import { Container } from "react-bootstrap";
 // import Homepage from "./pages/hompepage/homepage1";
 // import Loginpage from "./pages/loginpage/loginpage1";
@@ -89,7 +89,7 @@ function App() {
   
 
 
-       <BrowserRouter> 
+       <Hashrouter> 
       <Footerss/> 
       <Navbarlogin/>
      
@@ -153,7 +153,7 @@ function App() {
 
 <Footer1/>
 
- </BrowserRouter> 
+ </Hashrouter> 
          
        </div>
 </div>
