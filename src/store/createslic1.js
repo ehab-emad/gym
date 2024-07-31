@@ -15,8 +15,7 @@ export const getData = createAsyncThunk('ecommerce/getData', async (_, thunkAPI)
 export const productSlice = createSlice({
     name: 'ecommerce',
     initialState: { product: []
-        ,  counterItems: localStorage.getItem("counterItems")
-        ? JSON.parse(localStorage.getItem("counterItems"))
+        ,  counterItems: localStorage.getItem("counterItems") ? JSON.parse(localStorage.getItem("counterItems"))
         : []
     },
     reducers: { 

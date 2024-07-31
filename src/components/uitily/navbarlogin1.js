@@ -110,7 +110,7 @@ import { Link, useNavigate } from 'react-router-dom';
                  <Nav.Link style={{color:"gold"}} to="/" onClick={logoutUser}>
                     Logout
                   </Nav.Link>
-                 
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
               </NavDropdown.Item>
               <NavDropdown.Item href="#action5">
               </NavDropdown.Item>

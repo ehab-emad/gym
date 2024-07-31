@@ -26,7 +26,7 @@ export default function Moree({title}){
     {data.map((item)=>{
         if(item.fame==="yes"){
             return(
-          <Cardproduct key={item.id} img={item.images} title={item.title} price={item.price} scope={item.scope}/>
+          <Cardproduct key={item.id} img={item.images} title={item.title} price={item.price} scope={item.scope} item={item}/>
           
           
             )}
