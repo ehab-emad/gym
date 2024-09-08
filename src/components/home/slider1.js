@@ -28,7 +28,7 @@ function Sliderhome() {
       </Carousel.Item> */}
       <Carousel.Item className='slider-bg1 '>
        
-      <div className='d-flex flex-row justify-content-center align-items-center '><img className='img-slider' src={lolog} style={{width:"100%" ,height:"100%"}}
+      <div className='d-flex flex-row justify-content-center align-items-center ' style={{height:"100%"}}><img className='img-slider' src={lolog} style={{width:"100%" ,height:"100%"}}
       alt='second slide'></img>
       {/* <div className=' mx-5 text-center'>     <h3 className='fs-5'>  معانا متشلش هم فورمتك</h3>
           <p className='fs-4'>    </p></div> */}
@@ -36,7 +36,7 @@ function Sliderhome() {
       </Carousel.Item>
       <Carousel.Item className='slider-bg1 '>
        
-       <div className='d-flex flex-row justify-content-center align-items-center '><img className='img-slider' src={dryy} style={{width:"100%" ,height:"100%"}}
+       <div className='d-flex flex-row justify-content-center align-items-center 'style={{height:"100%"}}><img className='img-slider' src={dryy} style={{width:"100%" ,height:"100%"}}
        alt='second slide'></img>
        {/* <div className=' mx-5 text-center'>     <h3 className='fs-5'>  معانا متشلش هم فورمتك</h3>
            <p className='fs-4'>    </p></div> */}
@@ -44,7 +44,7 @@ function Sliderhome() {
        </Carousel.Item>
        <Carousel.Item className='slider-bg1 '>
        
-       <div className='d-flex flex-row justify-content-center align-items-center '><img className='img-slider' src={putt} style={{width:"100%" ,height:"100%"}}
+       <div className='d-flex flex-row justify-content-center align-items-center 'style={{height:"100%"}}><img className='img-slider' src={putt} style={{width:"100%" ,height:"100%"}}
        alt='second slide'></img>
        {/* <div className=' mx-5 text-center'>     <h3 className='fs-5'>  معانا متشلش هم فورمتك</h3>
            <p className='fs-4'>    </p></div> */}

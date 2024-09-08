@@ -108,7 +108,7 @@ dispatch(getData())
    
   
      
-  <Container className='' >
+  <Container className='w1' >
      
 <Routes>
 <Route path='/' element={ <Homepage/>}/>
