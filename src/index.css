@@ -169,11 +169,16 @@ transform: scale(1.1);
 }
 .btn-styl{
   height: 27px;
-  font-size: 11px;
+  font-size: 16px;
   color: black;
-  background-color: #d3c8c8;
+  padding: 1px 15px;
+  border-radius: 10px;
+  background-color: #153899;
   border: none;
   margin-top: 10px;
+  border: none;
+  color: white;
+
 }
 .app i{
   color: white;
