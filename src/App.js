@@ -90,7 +90,8 @@ function App() {
 
 
        <HashRouter> 
-      <Footerss/> 
+
+      <Footerss
       <Navbarlogin/>
      
     
