@@ -131,8 +131,14 @@ color: black;
   color: white;
 }
 .card-styling{
-  height: 310px;
-  background-color:white;
+  /* height: 310px; */
+  /* max-width: 82%; */
+  color: white;
+    height: 310px;
+    padding: 10px;
+    
+    background-color: #343a40;
+  /* background-color:white; */
   /* padding-Top: 20px; */
   /* border-bottom: none; */
 }
@@ -212,6 +218,9 @@ padding: 0px;
         z-index: 3333;
         width: 100%;
           }
+          .card-styling{
+            width: 115%;
+          }
       .ss{
         display: flex;
       }
@@ -251,7 +260,11 @@ top: 39px;
 position: fixed;
 width: 100%;
 padding: 0px;
-  } .ss{
+  } 
+  .card-styling{
+    width: 110%;
+  }
+  .ss{
         
     top: 0;
     position: fixed;
@@ -320,10 +333,17 @@ padding: 0px;
               justify-content: center;
               padding: 2px;background-color: black;
           } 
+          .card-styling{
+            width: 113%;
+          }
      
   } @media screen and (min-device-width:377px) and (max-device-width:391px) { .ss{
     display: flex;
-  }.nav-style{
+  }  .card-styling{
+    width: 113%;
+  }
+  
+  .nav-style{
     z-index: 33;
 top: 39px;
 position: fixed;
@@ -362,7 +382,12 @@ padding: 0px;
   }
   @media screen and (min-device-width:392px) and (max-device-width:415px) { .ss{
     display: flex;
-  } .ss{
+  } 
+  .card-styling{
+    width: 107%;
+  }
+  
+  .ss{
         
     top: 0;
     position: fixed;
@@ -439,7 +464,10 @@ padding: 0px;
           font-size: 13px;
         }
      
-  } @media screen and (min-device-width:431px) and (max-device-width:770px) { .ss{
+  } @media screen and (min-device-width:431px) and (max-device-width:770px) { 
+    .card-styling{
+      width: 90%;
+    }.ss{
     display: flex;
   }.nav-style{
     z-index: 33;
@@ -549,8 +577,17 @@ padding: 0px;
       .whatsapp{
           top: 90%;
           right: 3%;
-      }     .control-style{
+      }
+      .card-styling{
+        width: 107%;
+      }
+       .a11{
         display: none;
+      }    .control-style{
+        display: none;
+      }
+      .nav-style{
+        top: 0;
       }
       .ss{
         display: none;
@@ -570,11 +607,18 @@ padding: 0px;
       }
      
   }
-  @media screen and (min-device-width:1208px) and (max-device-width:1290px) {
+  @media screen and (min-device-width:1206px) and (max-device-width:1290px) {
       .whatsapp{
           top: 90%;
           right: 3%;
-      }     .control-style{
+      } 
+      .card-styling{
+        width: 109%;
+      }.a11{
+        display: none;
+      }  .nav-style{
+        top: 0;
+      }   .control-style{
         display: none;
       }
       .ss{
@@ -595,13 +639,20 @@ padding: 0px;
       }
      
   }
-  @media screen and (min-device-width:1210px)  {
+  @media screen and (min-device-width:1210px)  { .card-styling{
+    width: 112%;
+  }
       .whatsapp{
           top: 90%;
           right: 3%;
+      }.a11{
+        display: none;
       }
       .control-style{
         display: none;
+      }
+      .nav-style{
+        top: 0;
       }
       .ss{
         display: none;
@@ -1370,4 +1421,16 @@ display: none;
 .half1,.half2{
   display: flex; justify-content: space-between;
   align-items: center;
+}
+.a11{
+  font-size: 25px;
+  color: white;
+  padding: 4px;
+  margin-right: 5px;
+}
+.ss,.nav-style{
+  z-index: 99900;
+  background-color: rgb(56 71 157);;
+}.nav-style{
+  position: fixed;
 }

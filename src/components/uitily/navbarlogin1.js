@@ -15,8 +15,8 @@ import { toast } from "react-toastify";
 // import { Container, Form, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import ShowOnLogin, { ShowOnLogout } from "../../hiddenlink/hiddenlink1";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaUserCircle } from "react-icons/fa";
-import { faCartShopping, faSearch, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import { FaBars, FaToggleOn, FaUserCircle } from "react-icons/fa";
+import { faBars, faCartShopping, faSearch, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { AdminOnlyLink } from "../admin/adminonlylink1";
 import { auth } from "../../firbase/config1";
 
@@ -116,28 +116,12 @@ import { Link, useNavigate } from 'react-router-dom';
                   </Link>
                   </AdminOnlyLink></div>
           
-        <Navbar.Toggle aria-controls="navbarScroll" />
-      
+  
 
 
 
-
-          <Nav
-            className="me-auto my-2 my-lg-0 "
-            style={{ maxHeight: '100px',marginLeft:"-90px" }}
-            navbarScroll
-          >
-                       
-           
-           
-            <Nav.Link>
-          
-           
-                </Nav.Link>
-           
-           
-          </Nav>
-        <div className='half2'>  <ShowOnLogin>
+        
+        <div className='half2'>  
             <Nav.Link className=' d-flex align-items-center'  >
             <p className='cart-lentgh'> {carts.length} </p>
             <Link to={"/cart"}>  <FontAwesomeIcon icon={faCartShopping} className='shop    fs-4' /></Link>
@@ -145,11 +129,11 @@ import { Link, useNavigate } from 'react-router-dom';
            
             </Nav.Link>
 
-            </ShowOnLogin>
+          
             <FontAwesomeIcon onClick={()=>setvalue(!value)} icon={faSearch} style={{color:"white", fontSize:"20px" ,marginRight:"25px" ,cursor:"pointer",fontWeight:"700"}}/>
-            
+           
+            <FontAwesomeIcon className='a11' icon={faBars}/>
 
-        
    
         <div className= {`ctr1 ${value? "":"popo"}`}>
          <Form.Control 
@@ -161,6 +145,7 @@ import { Link, useNavigate } from 'react-router-dom';
          </div>
 
       </div>
+    
       </div>
     </Navbar>
   );

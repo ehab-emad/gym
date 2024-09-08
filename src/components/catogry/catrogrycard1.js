@@ -28,8 +28,8 @@ export function Catogreycard({img,cat,i}){
         <Subtitle title="الاصناف"  pathtext='/allgatogray'/>
     {categories.map((item)=>{
         return(
-            <Col key={item.id} xs="6"
-             sm="12"
+            <Col key={item.id} xs="6" 
+             sm="6"
              md="3"
              lg="2"
             className="my d-flex justify-content-around"
