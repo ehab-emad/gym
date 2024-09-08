@@ -47,7 +47,7 @@ import { Link, useNavigate } from 'react-router-dom';
             // console.log(user);
             if (user.displayName == null) {
               const u1 = user.email.slice(0, -10);
-              console.log(u1)
+       
               const uName = u1.charAt(0).toUpperCase() + u1.slice(1);
               setdisplayName(uName);
             } else {

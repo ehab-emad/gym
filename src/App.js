@@ -83,69 +83,80 @@ function App() {
 //   dispatch(getData())
 //   setdatas(data)
 //  })
-
-  return (<div className='app'>
-    <div className="loading"><img className=".animated-span" src={logo} alt='.....'/></div>
-  <div className='whatsapp'> <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'><i class="fa-brands fa-whatsapp"></i></a></div>
-    <div className='app-styling'>     
-  
+const loading=useSelector((item)=>item.productss.loading)
+const dispatch=useDispatch()
 
 
-       <HashRouter> 
-      <Footerss/> 
-      <Navbarlogin/>
-     
+useEffect(()=>{
+dispatch(getData())
+
+},[dispatch])
+  return (
+<>
+{console.log(loading)}
+{loading? <div className="loading"><img className="animated-span" src={logo} alt='.....'/></div>:<div className='app'>
+
     
-       
-    <Container className='' >
-       
-<Routes>
- <Route path='/' element={ <Homepage/>}/>
- <Route path='/login' element={ <Loginpage/>}/>
- <Route path='/register' element={ <Register/>}/>
- <Route path='/reset' element={ <Reset/>}/>
- <Route path='/counterproducts' element={ <Oneproducts />}/>
- <Route path='/more' element={ <Moree title={"الاكثر مبيعا"}/>}/>
- <Route path='/cart' element={ <Cart />}/>
- <Route path='/posts' element={ <Posts/>}/>
- <Route path='/cart/checkout' element={ <Checkout/>}/>
- {/* <Route path='/admin/products/orders'  element={ <Order/>}/> */}
- <Route path='*' element={<Navigate to='/' />} />
- {/* <Route path='/admin/cart/payment' element={ <Payment/>}/> */}
+<div className='whatsapp'> <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'><i class="fa-brands fa-whatsapp"></i></a></div>
+  <div className='app-styling'>     
 
- <Route
-            path="/admin/products"
-            element={
-             
-                <Admin/>
-              
-            }
-          />
+
+
+     <HashRouter> 
+    <Footerss/> 
+    <Navbarlogin/>
+   
+  
+     
+  <Container className='' >
+     
+<Routes>
+<Route path='/' element={ <Homepage/>}/>
+<Route path='/login' element={ <Loginpage/>}/>
+<Route path='/register' element={ <Register/>}/>
+<Route path='/reset' element={ <Reset/>}/>
+<Route path='/counterproducts' element={ <Oneproducts />}/>
+<Route path='/more' element={ <Moree title={"الاكثر مبيعا"}/>}/>
+<Route path='/cart' element={ <Cart />}/>
+<Route path='/posts' element={ <Posts/>}/>
+<Route path='/cart/checkout' element={ <Checkout/>}/>
+{/* <Route path='/admin/products/orders'  element={ <Order/>}/> */}
+<Route path='*' element={<Navigate to='/' />} />
+{/* <Route path='/admin/cart/payment' element={ <Payment/>}/> */}
 
 <Route
-            path="/admin/products/createproduct"
-            element={
-             
-                <Createproducts/>
-              
-            }
-          />
-          {/* <Route
-            path="/cart/payment"
-            element={
-             
-                <Payment />
-              
-            }
-          /> */}
-          <Route
-            path="/admin/products/edit/:id"
-            element={
-             
-                <Editproduct />
-              
-            }
-          /> 
+          path="/admin/products"
+          element={
+           
+              <Admin/>
+            
+          }
+        />
+
+<Route
+          path="/admin/products/createproduct"
+          element={
+           
+              <Createproducts/>
+            
+          }
+        />
+        {/* <Route
+          path="/cart/payment"
+          element={
+           
+              <Payment />
+            
+          }
+        /> */}
+        <Route
+          path="/admin/products/edit/:id"
+          element={
+           
+              <Editproduct />
+            
+          }
+        /> 
 
 </Routes>
 
@@ -155,10 +166,13 @@ function App() {
 
 <Footer1/>
 
- </HashRouter> 
-         
-       </div>
-</div>
+</HashRouter> 
+       
+     </div>
+</div> }
+
+   
+  </>
   );
 }
 

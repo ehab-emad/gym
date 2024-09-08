@@ -8,13 +8,13 @@ import Cardproduct from '../products/productcard1'
 // import Cardproduct from '../products/producttcard'
 export function Hompeproducts({btntitle,title}){
     const products=useSelector((item)=>item.productss.product)
-    const dispatch=useDispatch()
+    // const dispatch=useDispatch()
 
 
-    useEffect(()=>{
-    dispatch(getData())
-   console.log(products)
-    },[dispatch])
+    // useEffect(()=>{
+    // dispatch(getData())
+
+    // },[dispatch])
     return(
 
 <Row className='d-flex justify-content-between my-'>
