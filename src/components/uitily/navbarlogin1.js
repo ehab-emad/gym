@@ -91,7 +91,7 @@ import { Link, useNavigate } from 'react-router-dom';
   return (
     <Navbar expand="lg" className="bg-dark nav-style" style={{width:"100%",padding:" 0px 00px "}}>
       <div className='cun' >
-        <Navbar.Brand href="#"><Link to='/'><img src={logo} className='img-style ' alt='...'/></Link></Navbar.Brand>
+        <div className='half1'><Navbar.Brand href="#"><Link to='/'><img src={logo} className='img-style ' alt='...'/></Link></Navbar.Brand>
         <ShowOnLogout>
                           <Nav.Link  className=' d-flex align-items-center shops' >
        <Link style={{textDecoration:"none"}} to={'/login'}> login <FontAwesomeIcon icon={faUserAlt} className='shop me-1 text-info mx-2 fs-4  '  /></Link>
@@ -114,10 +114,10 @@ import { Link, useNavigate } from 'react-router-dom';
                   <Link to="/admin/products">
                     <button className="btn btn-info mn mx-3" >Admin</button>
                   </Link>
-                  </AdminOnlyLink>
+                  </AdminOnlyLink></div>
           
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+      
 
 
 
@@ -137,7 +137,7 @@ import { Link, useNavigate } from 'react-router-dom';
            
            
           </Nav>
-          <ShowOnLogin>
+        <div className='half2'>  <ShowOnLogin>
             <Nav.Link className=' d-flex align-items-center'  >
             <p className='cart-lentgh'> {carts.length} </p>
             <Link to={"/cart"}>  <FontAwesomeIcon icon={faCartShopping} className='shop    fs-4' /></Link>
@@ -150,7 +150,7 @@ import { Link, useNavigate } from 'react-router-dom';
             
 
         
-        </Navbar.Collapse>
+   
         <div className= {`ctr1 ${value? "":"popo"}`}>
          <Form.Control 
             type="search"
@@ -160,7 +160,7 @@ import { Link, useNavigate } from 'react-router-dom';
           />
          </div>
 
-      
+      </div>
       </div>
     </Navbar>
   );

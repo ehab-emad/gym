@@ -1367,3 +1367,7 @@ display: none;
 .w1{
   margin-top: 131px;
 }
+.half1,.half2{
+  display: flex; justify-content: space-between;
+  align-items: center;
+}
