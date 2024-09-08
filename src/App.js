@@ -15,6 +15,7 @@
 // import { Container } from 'react-bootstrap';
 // import Homepage from './pages/hompepage/homepage';
 // import Oneproducts from './pages/counterproduct';
+import logo from './images/logo.jpg'
 
 import { useDispatch, useSelector } from "react-redux";
 import Footerss from "./components/uitily/footer1";
@@ -84,15 +85,15 @@ function App() {
 //  })
 
   return (<div className='app'>
+    <div className="loading"><img className=".animated-span" src={logo} alt='.....'/></div>
   <div className='whatsapp'> <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'><i class="fa-brands fa-whatsapp"></i></a></div>
     <div className='app-styling'>     
   
 
 
        <HashRouter> 
-
-      <Footerss/>
-    <Navbarlogin/>
+      <Footerss/> 
+      <Navbarlogin/>
      
     
        
