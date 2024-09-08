@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 import ShowOnLogin, { ShowOnLogout } from "../../hiddenlink/hiddenlink1";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaUserCircle } from "react-icons/fa";
-import { faCartShopping, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faSearch, faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import { AdminOnlyLink } from "../admin/adminonlylink1";
 import { auth } from "../../firbase/config1";
 
@@ -29,6 +29,7 @@ import { Link, useNavigate } from 'react-router-dom';
    
     function Navbarlogin() {
       const [displayName, setdisplayName] = useState("");
+      const [value, setvalue] = useState(false);
       // const [scrollPage, setScrollPage] = useState(false);
       const navigate = useNavigate();
 
@@ -89,7 +90,7 @@ import { Link, useNavigate } from 'react-router-dom';
        const carts = useSelector((state) => state.carts.cartItems)
   return (
     <Navbar expand="lg" className="bg-dark nav-style" style={{width:"100%",padding:" 0px 00px "}}>
-      <Container >
+      <div className='cun' >
         <Navbar.Brand href="#"><Link to='/'><img src={logo} className='img-style ' alt='...'/></Link></Navbar.Brand>
         <ShowOnLogout>
                           <Nav.Link  className=' d-flex align-items-center shops' >
@@ -97,51 +98,27 @@ import { Link, useNavigate } from 'react-router-dom';
       
 
             </Nav.Link>                </ShowOnLogout>
-            <ShowOnLogin>   <NavDropdown title="login succes" id="navbarScrollingDropdown" style={{color:"red"}}>
-              <NavDropdown.Item href="#action3">
-              <Nav.Link> 
+            <ShowOnLogin>   <Nav.Link style={{color:"gold"}} to="/" onClick={logoutUser}>
+                  
+                    <i class="fa-solid fa-arrow-right-from-bracket mn" ></i>
+                  </Nav.Link>
+                  {/* <Nav.Link> 
                   <a  href="#home" style={{ color: "#ff7722" ,display:"flex",fontSize:"20px",width:"100px",alignItems:"center",textDecoration:"none"}}>
                     <FaUserCircle size={20} style={{marginLeft:"2px"}}/>
                     Hi, {displayName}
                   </a>
-                </Nav.Link>
-                </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                 <Nav.Link style={{color:"gold"}} to="/" onClick={logoutUser}>
-                    Logout
-                  </Nav.Link>
-                  <i class="fa-solid fa-arrow-right-from-bracket"></i>
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action5">
-              </NavDropdown.Item>
-            
-           
-            </NavDropdown>
+                </Nav.Link> */}
+                
             </ShowOnLogin>
             <AdminOnlyLink>
                   <Link to="/admin/products">
-                    <button className="btn btn-info">Admin</button>
+                    <button className="btn btn-info mn mx-3" >Admin</button>
                   </Link>
                   </AdminOnlyLink>
-            <ShowOnLogin>
-            <Nav.Link className=' d-flex align-items-center'  >
-            <p className='cart-lentgh'> {carts.length} </p>
-            <Link to={"/cart"}>  <FontAwesomeIcon icon={faCartShopping} className='shop    fs-4' /></Link>
-        
-           
-            </Nav.Link>
-            </ShowOnLogin>
+          
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
 
-
-
-          <Form.Control 
-            type="search"
-            placeholder="ابحث عن المنتجات......"
-            className=""
-            aria-label="Search"
-          />
 
 
 
@@ -154,26 +131,37 @@ import { Link, useNavigate } from 'react-router-dom';
            
            
             <Nav.Link>
-            <NavDropdown title="Admin" id="navbarScrollingDropdown" style={{color:"red"}}>
-              <NavDropdown.Item href="#action3">
-            
-                </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-            
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
+          
            
                 </Nav.Link>
            
            
           </Nav>
+          <ShowOnLogin>
+            <Nav.Link className=' d-flex align-items-center'  >
+            <p className='cart-lentgh'> {carts.length} </p>
+            <Link to={"/cart"}>  <FontAwesomeIcon icon={faCartShopping} className='shop    fs-4' /></Link>
+        
+           
+            </Nav.Link>
+
+            </ShowOnLogin>
+            <FontAwesomeIcon onClick={()=>setvalue(!value)} icon={faSearch} style={{color:"white", fontSize:"20px" ,marginRight:"25px" ,cursor:"pointer",fontWeight:"700"}}/>
+            
+
+        
         </Navbar.Collapse>
+        <div className= {`ctr1 ${value? "":"popo"}`}>
+         <Form.Control 
+            type="search"
+            placeholder="ابحث عن المنتجات......"
+            className="ctrl"
+            aria-label="Search"
+          />
+         </div>
+
       
-      </Container>
+      </div>
     </Navbar>
   );
 }

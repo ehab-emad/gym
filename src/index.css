@@ -192,7 +192,13 @@ z-index: 12;
       .whatsapp{
           top: 90%;
           right: 3%;
-      }  .limit{
+      }
+      .ss{
+        display: flex;
+      }
+      
+      
+      .limit{
         font-size: 11px;
       }.svgIcon {
         width: 12px;}
@@ -211,7 +217,9 @@ z-index: 12;
           padding: 2px;background-color: black;
       }} 
   
-  @media screen and (min-device-width:346px) and (max-device-width:361px) {
+  @media screen and (min-device-width:346px) and (max-device-width:361px) { .ss{
+    display: flex;
+  }
       .whatsapp{
           top: 90%;
           right: 3%;
@@ -233,7 +241,9 @@ z-index: 12;
           justify-content: center;
           padding: 2px;background-color: black;
       }} 
-      @media screen and (min-device-width:361px) and (max-device-width:376px) {
+      @media screen and (min-device-width:361px) and (max-device-width:376px) { .ss{
+        display: flex;
+      }
           .whatsapp{
               top: 90%;
               right: 3%;
@@ -259,7 +269,9 @@ z-index: 12;
               padding: 2px;background-color: black;
           } 
      
-  } @media screen and (min-device-width:377px) and (max-device-width:391px) {
+  } @media screen and (min-device-width:377px) and (max-device-width:391px) { .ss{
+    display: flex;
+  }
       .whatsapp{
           top: 90%;
           right: 3%;
@@ -283,7 +295,9 @@ z-index: 12;
       } 
      
   }
-  @media screen and (min-device-width:392px) and (max-device-width:415px) {
+  @media screen and (min-device-width:392px) and (max-device-width:415px) { .ss{
+    display: flex;
+  }
       .whatsapp{
           top: 90%;
           right: 3%;
@@ -309,7 +323,9 @@ z-index: 12;
      
   }
 
-  @media screen and (min-device-width:416px) and (max-device-width:431px) {
+  @media screen and (min-device-width:416px) and (max-device-width:431px) { .ss{
+    display: flex;
+  }
       .whatsapp{
           top: 90%;
           right: 3%;
@@ -332,7 +348,9 @@ z-index: 12;
           font-size: 13px;
         }
      
-  } @media screen and (min-device-width:431px) and (max-device-width:770px) {
+  } @media screen and (min-device-width:431px) and (max-device-width:770px) { .ss{
+    display: flex;
+  }
       .whatsapp{
           top: 90%;
           right: 3%;
@@ -356,7 +374,9 @@ z-index: 12;
       } 
      
   }
-  @media screen and (min-device-width:770px) and (max-device-width:831px) {
+  @media screen and (min-device-width:770px) and (max-device-width:831px) { .ss{
+    display: flex;
+  }
       .whatsapp{
           top: 90%;
           right: 3%;
@@ -378,7 +398,10 @@ z-index: 12;
       .whatsapp{
           top: 90%;
           right: 3%;
-      }     .button {
+      }  
+      .ss{
+        display: flex;
+      }   .button {
         width: 50px;
         height: 50px;}
       /* .box{width: 1000px;} */
@@ -394,7 +417,12 @@ z-index: 12;
       .whatsapp{
           top: 90%;
           right: 3%;
-      }  
+      }     .control-style{
+        display: none;
+      }
+      .ss{
+        display: none;
+      }
       .button {
         width: 50px;
         height: 50px;}
@@ -405,14 +433,21 @@ z-index: 12;
           border-radius: 4px;
           justify-content: center;
           padding: 2px;background-color: black;
-      } 
+      }    .control-style{
+        display: none;
+      }
      
   }
   @media screen and (min-device-width:1208px) and (max-device-width:1290px) {
       .whatsapp{
           top: 90%;
           right: 3%;
-      }     .button {
+      }     .control-style{
+        display: none;
+      }
+      .ss{
+        display: none;
+      }   .button {
         width: 50px;
         height: 50px;}
       .mmm{
@@ -423,12 +458,21 @@ z-index: 12;
           justify-content: center;
           padding: 2px;background-color: black;
       } 
+      .control-style{
+        display: none;
+      }
      
   }
   @media screen and (min-device-width:1210px)  {
       .whatsapp{
           top: 90%;
           right: 3%;
+      }
+      .control-style{
+        display: none;
+      }
+      .ss{
+        display: none;
       }
            .button {
         width: 50px;
@@ -1151,4 +1195,34 @@ ul li{
   100% {
       transform: rotate(360deg); /* يدور حول محوره */
   }
+}
+
+.mn:hover{
+color: #e66836;
+}
+.cun{
+  padding: 10px 20px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.ctr1{
+  right: 0;
+    background-color: black;
+    z-index: 33;
+    position: absolute;
+  
+    padding: 20px;
+    top: 100%;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    /* transition: all 0.7s ease; */
+    color: var(--bs-body-color);
+}
+.popo{
+display: none;
 }

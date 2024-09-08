@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 
 export default function Footerss(){
     return(
-<div  className="ss d-flex justify-content-between align-items-center" style={{height:"40px"}}>
+<div  className="ss justify-content-between align-items-center" style={{height:"40px"}}>
 <Container >
 <Row >
   <Col className="d-flex justify-content-between align-items-center vv">
