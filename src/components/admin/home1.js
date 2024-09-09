@@ -13,7 +13,7 @@ export default function Home(){
                 throw new Error()
               
             }
-            dispatch(getData())
+           
            
         })
         .catch(erorr=>{
@@ -24,7 +24,7 @@ export default function Home(){
  
 const data=useSelector((state)=>state.productss.product)
 const dispatch=useDispatch()
-useEffect(()=>{dispatch(getData())},[dispatch])
+// useEffect(()=>{dispatch(getData())},[dispatch])
 return(
 <Container>
 <h2 className="title-st">products</h2>

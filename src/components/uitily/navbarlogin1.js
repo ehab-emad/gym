@@ -106,10 +106,10 @@ import { searchings } from '../../store/createslic1';
   return (
     <Navbar expand="lg" className="bg-dark nav-style" style={{width:"100%",padding:" 0px 00px "}}>
       <div className='cun' >
-        <div className='half1'><Navbar.Brand href="#"><Link to='/'><img src={logo} className='img-style ' alt='...'/></Link></Navbar.Brand>
+        <div className='half1'><Navbar.Brand href="#"><Link onClick={()=>{setvalue(false)}} to='/'><img src={logo} className='img-style ' alt='...'/></Link></Navbar.Brand>
         <ShowOnLogout>
                           <Nav.Link  className=' d-flex align-items-center shops' >
-       <Link style={{textDecoration:"none"}} to={'/login'}> login <FontAwesomeIcon icon={faUserAlt} className='shop me-1 text-info mx-2 fs-4  '  /></Link>
+       <Link style={{textDecoration:"none"}} to={'/login'} onClick={()=>{setvalue(false)}}> login <FontAwesomeIcon icon={faUserAlt} className='shop me-1 text-info mx-2 fs-4  '  /></Link>
       
 
             </Nav.Link>                </ShowOnLogout>
@@ -126,7 +126,7 @@ import { searchings } from '../../store/createslic1';
                 
             </ShowOnLogin>
             <AdminOnlyLink>
-                  <Link to="/admin/products">
+                  <Link to="/admin/products" onClick={()=>{setvalue(false)}}>
                     <button className="btn btn-info mn mx-3" >Admin</button>
                   </Link>
                   </AdminOnlyLink></div>
@@ -139,7 +139,7 @@ import { searchings } from '../../store/createslic1';
         <div className='half2'>  
             <Nav.Link className=' d-flex align-items-center'  >
             <p className='cart-lentgh'> {carts.length} </p>
-            <Link to={"/cart"}>  <FontAwesomeIcon icon={faCartShopping} className='shop    fs-4' /></Link>
+            <Link to={"/cart"} onClick={()=>{setvalue(false)}}>  <FontAwesomeIcon icon={faCartShopping} className='shop    fs-4'  /></Link>
         
            
             </Nav.Link>
