@@ -53,6 +53,7 @@ import Createproducts from "./pages/createproductpage/index";
 import Editproduct from "./pages/editproductspage/index";
 import Footer1 from "./pages/fooer2/index";
 import Loginpage from "./pages/loginpage/index";
+import Searching from './pages/search';
 // import Createproducts from "./pages/createproductpage/createproducts1";
 // import Editproduct from "./pages/editproductspage/editproducts1";
 
@@ -116,6 +117,7 @@ dispatch(getData())
 <Route path='/register' element={ <Register/>}/>
 <Route path='/reset' element={ <Reset/>}/>
 <Route path='/counterproducts' element={ <Oneproducts />}/>
+<Route path='/searching' element={ <Searching />}/>
 <Route path='/more' element={ <Moree title={"الاكثر مبيعا"}/>}/>
 <Route path='/cart' element={ <Cart />}/>
 <Route path='/posts' element={ <Posts/>}/>

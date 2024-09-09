@@ -24,11 +24,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container, Form, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { searchings } from '../../store/createslic1';
 
 
    
     function Navbarlogin() {
       const [displayName, setdisplayName] = useState("");
+      const [setcontent, content] = useState("");
       const [value, setvalue] = useState(false);
       // const [scrollPage, setScrollPage] = useState(false);
       const navigate = useNavigate();
@@ -77,6 +79,7 @@ import { Link, useNavigate } from 'react-router-dom';
       //   setShowMenu(false);
       // };
     
+      
       const logoutUser = () => {
         signOut(auth)
           .then(() => {
@@ -138,9 +141,13 @@ import { Link, useNavigate } from 'react-router-dom';
         <div className= {`ctr1 ${value? "":"popo"}`}>
          <Form.Control 
             type="search"
+            onChange={(e)=>dispatch(searchings(e.target.value))}
             placeholder="ابحث عن المنتجات......"
             className="ctrl"
             aria-label="Search"
+            onClick={()=>{navigate('/searching')
+
+            }}
           />
          </div>
 

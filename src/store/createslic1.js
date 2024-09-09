@@ -16,7 +16,8 @@ export const productSlice = createSlice({
     name: 'ecommerce',
     initialState: { product: []
         ,  counterItems: localStorage.getItem("counterItems") ? JSON.parse(localStorage.getItem("counterItems"))
-        : [], loading:false
+        : [], loading:false,
+        countersearch:[]
     },
    
     reducers: { 
@@ -105,6 +106,17 @@ export const productSlice = createSlice({
            console.log(fliter)
            localStorage.setItem("counterItems", JSON.stringify(state.counterItems));
         },  
+        searchings: (state, action) => {
+            const query = action.payload.toLowerCase();
+            if (query === "") {
+                state.countersearch = state.product; // إعادة جميع الأفلام عند البحث الفارغ
+            } else {
+                state.countersearch = state.product.filter((i) =>
+                    i.title.toLowerCase().includes(query)
+                  );
+            }
+        }
+    ,
        
     },
 
@@ -121,6 +133,6 @@ export const productSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { loading, filter ,addPost,increase,decrease,clearCart,deleteCart,addCart,addproduct} = productSlice.actions
+export const { loading,searchings, filter ,addPost,increase,decrease,clearCart,deleteCart,addCart,addproduct} = productSlice.actions
 
 export default productSlice.reducer
