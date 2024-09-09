@@ -79,7 +79,19 @@ import { searchings } from '../../store/createslic1';
       //   setShowMenu(false);
       // };
     
-      
+      const handleSearchClick = () => {
+        if (value) {
+          setvalue(!value)
+          navigate('/');
+        // الانتقال إلى صفحة البحث
+        } else {
+          setvalue(!value)
+          navigate('/searching') 
+        // العودة إلى الصفحة الرئيسية
+        }
+       
+      };
+    
       const logoutUser = () => {
         signOut(auth)
           .then(() => {
@@ -133,7 +145,7 @@ import { searchings } from '../../store/createslic1';
             </Nav.Link>
 
           
-            <FontAwesomeIcon onClick={()=>setvalue(!value)} icon={faSearch} style={{color:"white", fontSize:"20px" ,marginRight:"25px" ,cursor:"pointer",fontWeight:"700"}}/>
+            <FontAwesomeIcon onClick={handleSearchClick} icon={faSearch} style={{color:"white", fontSize:"20px" ,marginRight:"25px" ,cursor:"pointer",fontWeight:"700"}}/>
            
             <FontAwesomeIcon className='a11' icon={faBars}/>
 
@@ -145,9 +157,7 @@ import { searchings } from '../../store/createslic1';
             placeholder="ابحث عن المنتجات......"
             className="ctrl"
             aria-label="Search"
-            onClick={()=>{navigate('/searching')
-
-            }}
+         
           />
          </div>
 
