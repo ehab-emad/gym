@@ -1370,11 +1370,11 @@ ul li{
   
 }
 .loading img{
-  right: 41%;
+  right: 45%;
   border-radius: 50%;
   height: 60px;
   width: 60px;
-  top: 42%;
+  top: 50%;
   position: absolute;
 
 }
