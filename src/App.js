@@ -95,7 +95,8 @@ dispatch(getData())
   return (
 <>
 {console.log(loading)}
-{loading? <div className="loading"><img className="animated-span" src={logo} alt='.....'/></div>:<div className='app'>
+{false?
+ <div className="loading"><img className="animated-span" src={logo} alt='.....'/></div>:<div className='app'>
 
     
 <div className='whatsapp'> <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'><i class="fa-brands fa-whatsapp"></i></a></div>
