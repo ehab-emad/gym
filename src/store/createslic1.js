@@ -5,7 +5,7 @@ export const getData = createAsyncThunk('ecommerce/getData', async (_, thunkAPI)
 
     const res = await fetch('https://json-server-6-yt8p.onrender.com/products');
     const data = await res.json()
-  
+  console.log(data)
     return (data)
 
 })
