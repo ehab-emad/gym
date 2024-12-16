@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getData1 } from "../../store/gategoryslic1";
+import axios from "axios";
 // import { getData1 } from "../../store/gatogeryslic1";
 
 export default function Editproduct(){
@@ -27,6 +28,7 @@ const dispatch=useDispatch()
 const [initialdata,setintaildata]=useState([])
 
 useEffect(()=>{
+    getproduct()
 dispatch(getData1())},[dispatch])
 
 //     }
@@ -40,13 +42,6 @@ async function handlesubmit(event){
     console.log(product)
 
     
-    if(!product.title || !product.category || !product.price || 
-        !product.scope){
-
-
-        alert("please fill all the fields")
-        return
-    }
 
  try {
     const res=await fetch('https://json-server-6-yt8p.onrender.com/products/'+ params.id,{
@@ -71,20 +66,15 @@ async function handlesubmit(event){
 
   }
 }
-function getproduct(){
-    fetch('https://json-server-6-yt8p.onrender.com/products/'+ params.id).then(Response=>{
-        if(Response.ok){
-            return Response.json()
-        }
-        throw new Error()
-    }).then(data=>{
-        setintaildata(data)
-    })
-    .catch(erorr=>{
-        alert("unable to read the product details")
-    })
+const  getproduct=async()=>{
+    try {
+        const res = await axios.get(`https://json-server-6-yt8p.onrender.com/products/${params.id}`);
+        setintaildata(res.data); // تعيين البيانات للحالة
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      }
 }
-  useEffect(()=>getproduct(),[getproduct])
+ 
 
     return (<>
     <div className="container my-4">
@@ -125,7 +115,7 @@ function getproduct(){
      {categories.map((item)=>{return(<>
          <option value={item.category}> {item.category}</option>
      
-     
+     {console.log(initialdata)}
      </>)})}
      
      </select>
@@ -136,7 +126,7 @@ function getproduct(){
      <div className="row mb-3">
      <label className="col-sm-4 col-form-label">price</label>
      <div className="col-sm-8">
-     <input className="form-control" name="price" type="number" step='0.01' min='1' defaultValue={initialdata.price}  />
+     <input className="form-control" name="price" type="number" step='0.01' min='1' value={initialdata.price}  />
      <span className="text-danger"></span>
      
      </div>

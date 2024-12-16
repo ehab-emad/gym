@@ -43,7 +43,7 @@ export function Catogreycard({img,cat,i}){
         {/* <div className="category-card"  >
         </div> */}
         {""}
-        <div className="img-container">{console.log(item.images)}<img src={'https://json-server-6-yt8p.onrender.com/'+item.images} className="category-card-img"  style={{ height:"120px",width:"120px"}}/></div>
+        <div className="img-container">{console.log(item.images)}<img src={'https://json-server-6-yt8p.onrender.com/public/images/'+item.images} className="category-card-img"  style={{ height:"120px",width:"120px"}}/></div>
         <p className="category-card-text my-2 " >{item.category}</p>
          </div></Link>
             

@@ -72,7 +72,7 @@ return(
 <td className="ko">{item.title}</td>
 <td className="ko">{item.category}</td>
 <td className="ko">{item.price}$</td>
-<td><img src={"https://json-server-6-yt8p.onrender.com/" + item.images } width={"40"} alt="..."></img></td>
+<td><img src={"https://json-server-6-yt8p.onrender.com/public/images/" + item.images } width={"40"} alt="..."></img></td>
 {/* {console.log("http://localhost:30001/" + item.images)} */}
 <td className="ko">{item.scope}</td>
 <td style={{width:"9px",whiteSpace:"nowrap",} } className="d">
