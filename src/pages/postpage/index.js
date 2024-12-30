@@ -29,7 +29,7 @@ export default function Posts() {
             {posts.map((post) => {
                 return(<>   <div className='post container'>
                 <div className='imges'>
-                    <img className='one' src={"https://json-server-6-yt8p.onrender.com/" + post.images} alt='.....' />
+                    <img className='one' src={"https://json-server-6-yt8p.onrender.com/public/images/" + post.images} alt='.....' />
                     <div className='photos'>
                        
 

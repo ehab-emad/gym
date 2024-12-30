@@ -5,6 +5,7 @@ import { getData } from "../../store/createslic1";
 import { Link } from "react-router-dom";
 
 export default function Home(){
+    let number=1
     function deleteproduct(id){
         fetch('https://json-server-6-yt8p.onrender.com/products/'+ id,{
             method:"DELETE"
@@ -24,7 +25,7 @@ export default function Home(){
  
 const data=useSelector((state)=>state.productss.product)
 const dispatch=useDispatch()
-// useEffect(()=>{dispatch(getData())},[dispatch])
+useEffect(()=>{dispatch(getData())},[dispatch])
 return(
 <Container>
 <h2 className="title-st">products</h2>
@@ -45,7 +46,7 @@ return(
         <tr >
 
             <th className="ko">
-ID
+number
             </th> <th className="ko">
 Name
             </th> <th className="ko">
@@ -68,7 +69,7 @@ data.length>0 ?
 return(
     <>
     <tr>
-<td className="ko">{item.id}</td>
+<td className="ko">{number++}</td>
 <td className="ko">{item.title}</td>
 <td className="ko">{item.category}</td>
 <td className="ko">{item.price}$</td>

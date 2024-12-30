@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 // import db from '../../public/json/db.json'
-export const getData = createAsyncThunk('ecommerce/getData', async (_, thunkAPI) => {
+export const getData1 = createAsyncThunk('ecommerce/getData', async (_, thunkAPI) => {
 
-    const res = await fetch('https://json-server-6-yt8p.onrender.com/informationorder');
+    const res = await fetch('https://json-server-6-yt8p.onrender.com/orders');
     const data = await res.json()
     console.log(data)
     return (data)
@@ -11,9 +11,11 @@ export const getData = createAsyncThunk('ecommerce/getData', async (_, thunkAPI)
 
 
  
-export const productSlices = createSlice({
+export const orderdetailslic = createSlice({
     name: 'ecommerce',
-    initialState: { product: []},
+    initialState: { orders: [],products:[]
+        , loading:false
+    },
     reducers: { 
     //      addPost: (state , action) => {
          
@@ -104,11 +106,12 @@ export const productSlices = createSlice({
     },
 
     extraReducers: (builder) => {
-        builder.addCase(getData.pending, (state, action) => {
+        builder.addCase(getData1.pending, (state, action) => {
             state.loading = true;
         })
-        builder.addCase(getData.fulfilled, (state, action) => {
-            state.product = action.payload;
+        builder.addCase(getData1.fulfilled, (state, action) => {
+            state.orders = action.payload;
+            state.products = action.payload.additional_data;
 
             state.loading = false;
         })
@@ -116,6 +119,6 @@ export const productSlices = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { loading, filter ,addPost,increase,decrease,clearCart,deleteCart,addCart,addproduct} = productSlices.actions
+export const { loading, filter ,addPost,increase,decrease,clearCart,deleteCart,addCart,addproduct} = orderdetailslic.actions
 
-export default productSlices.reducer
+export default orderdetailslic.reducer

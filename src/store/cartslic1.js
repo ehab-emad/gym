@@ -48,9 +48,9 @@ export const cartSlice = createSlice({
               // Add item to the cart
               const tempProduct = { ...action.payload, cartQuantity: 1 };
               state.cartItems.push(tempProduct);
-              toast.success(`${action.payload.name} added to cart`, {
-                position: "top-left",
-              });
+              // toast.success(`${action.payload.name} added to cart`, {
+              //   position: "top-left",
+              // });
             }
             // save cart to LS
             localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
@@ -145,9 +145,7 @@ DECREASE_CART(state, action) {
   },
   CLEAR_CART(state, action) {
     state.cartItems = [];
-    toast.info(`Cart cleared`, {
-      position: "top-left",
-    });
+   
 
     localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
   },

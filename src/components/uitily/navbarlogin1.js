@@ -29,6 +29,8 @@ import { searchings } from '../../store/createslic1';
 
    
     function Navbarlogin() {
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+
       const [displayName, setdisplayName] = useState("");
       const [setcontent, content] = useState("");
       const [value, setvalue] = useState(false);
@@ -95,8 +97,9 @@ import { searchings } from '../../store/createslic1';
       const logoutUser = () => {
         signOut(auth)
           .then(() => {
+            localStorage.removeItem("isLoggedIn");
             toast.success("Logout successfully.");
-            navigate("/");
+            navigate("/login");
           })
           .catch((error) => {
             toast.error(error.message);
@@ -106,30 +109,7 @@ import { searchings } from '../../store/createslic1';
   return (
     <Navbar expand="lg" className="bg-dark nav-style" style={{width:"100%",padding:" 0px 00px "}}>
       <div className='cun' >
-        <div className='half1'><Navbar.Brand href="#"><Link onClick={()=>{setvalue(false)}} to='/'><img src={logo} className='img-style ' alt='...'/></Link></Navbar.Brand>
-        <ShowOnLogout>
-                          <Nav.Link  className=' d-flex align-items-center shops' >
-       <Link style={{textDecoration:"none"}} to={'/login'} onClick={()=>{setvalue(false)}}> login <FontAwesomeIcon icon={faUserAlt} className='shop me-1 text-info mx-2 fs-4  '  /></Link>
-      
-
-            </Nav.Link>                </ShowOnLogout>
-            <ShowOnLogin>   <Nav.Link style={{color:"gold"}} to="/" onClick={logoutUser}>
-                  
-                    <i class="fa-solid fa-arrow-right-from-bracket mn" ></i>
-                  </Nav.Link>
-                  {/* <Nav.Link> 
-                  <a  href="#home" style={{ color: "#ff7722" ,display:"flex",fontSize:"20px",width:"100px",alignItems:"center",textDecoration:"none"}}>
-                    <FaUserCircle size={20} style={{marginLeft:"2px"}}/>
-                    Hi, {displayName}
-                  </a>
-                </Nav.Link> */}
-                
-            </ShowOnLogin>
-            <AdminOnlyLink>
-                  <Link to="/admin/products" onClick={()=>{setvalue(false)}}>
-                    <button className="btn btn-info mn mx-3" >Admin</button>
-                  </Link>
-                  </AdminOnlyLink></div>
+       
           
   
 
@@ -137,17 +117,16 @@ import { searchings } from '../../store/createslic1';
 
         
         <div className='half2'>  
-            <Nav.Link className=' d-flex align-items-center'  >
+       
+          
+        {isLoggedIn && <FontAwesomeIcon onClick={handleSearchClick} icon={faSearch} style={{color:"white", fontSize:"20px" ,marginRight:"5px" ,cursor:"pointer",fontWeight:"700"}}/> }    
+        {isLoggedIn &&   <Nav.Link className=' d-flex align-items-center'  >
             <p className='cart-lentgh'> {carts.length} </p>
             <Link to={"/cart"} onClick={()=>{setvalue(false)}}>  <FontAwesomeIcon icon={faCartShopping} className='shop    fs-4'  /></Link>
         
            
-            </Nav.Link>
-
-          
-            <FontAwesomeIcon onClick={handleSearchClick} icon={faSearch} style={{color:"white", fontSize:"20px" ,marginRight:"25px" ,cursor:"pointer",fontWeight:"700"}}/>
-           
-            <FontAwesomeIcon className='a11' icon={faBars}/>
+            </Nav.Link>}
+       
 
    
         <div className= {`ctr1 ${value? "":"popo"}`}>
@@ -162,7 +141,35 @@ import { searchings } from '../../store/createslic1';
          </div>
 
       </div>
-    
+      <div className='half1'>
+      <AdminOnlyLink>
+                  <Link to="/admin/products" onClick={()=>{setvalue(false)}}>
+                    <button className="btn btn-info mn mx-3" >Admin</button>
+                  </Link>
+                  </AdminOnlyLink>
+            <ShowOnLogin>   <Nav.Link style={{color:"gold"}} to="/login" onClick={logoutUser}>
+                  
+                    <i class="fa-solid fa-arrow-right-from-bracket mn" ></i>
+                  </Nav.Link>
+                  {/* <Nav.Link> 
+                  <a  href="#home" style={{ color: "#ff7722" ,display:"flex",fontSize:"20px",width:"100px",alignItems:"center",textDecoration:"none"}}>
+                    <FaUserCircle size={20} style={{marginLeft:"2px"}}/>
+                    Hi, {displayName}
+                  </a>
+                </Nav.Link> */}
+                
+            </ShowOnLogin>
+              <ShowOnLogout>
+                          <Nav.Link  className=' d-flex align-items-center shops' >
+       <Link style={{textDecoration:"none"}} to={'/login'} onClick={()=>{setvalue(false)}}> login <FontAwesomeIcon icon={faUserAlt} className='shop me-1 text-info mx-2 fs-4  '  /></Link>
+      
+
+            </Nav.Link>                </ShowOnLogout>
+            <Navbar.Brand href="#">
+        <Link onClick={()=>{setvalue(false)}} to='/'>
+        <img src={logo} className='img-style ' alt='...'/></Link>
+        </Navbar.Brand>
+           </div>
       </div>
     </Navbar>
   );

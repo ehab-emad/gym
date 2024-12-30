@@ -54,41 +54,24 @@ import Editproduct from "./pages/editproductspage/index";
 import Footer1 from "./pages/fooer2/index";
 import Loginpage from "./pages/loginpage/index";
 import Searching from './pages/search';
-// import Createproducts from "./pages/createproductpage/createproducts1";
-// import Editproduct from "./pages/editproductspage/editproducts1";
-
-// import { Container } from "react-bootstrap";
-// import Createproducts from "./components/admin/createproducts";
-// import Editproduct from "./components/admin/editproduct";
-// import Order from "./components/admin/order";
-// import Navbarlogin from "./components/uitily/Navbarlogin";
-// import Footer from "./components/uitily/footer";
-// import Admin from "./pages/Admin";
-// import Moree from "./pages/More";
-// import Loginpage from "./pages/auth/loginpage";
-// import Register from "./pages/auth/register";
-// import Reset from "./pages/auth/resetpassword";
-// import Cart from "./pages/cart";
-// import Checkout from "./pages/checkout";
-// import Oneproducts from "./pages/counterproduct";
-// import Homepage from "./pages/hompepage/homepage";
-// import Posts from "./pages/posts";
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import OrderForm from './pages/payment';
+import { ProtectLinked } from './components/protectComponents';
+import { ToastContainer } from 'react-toastify';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firbase/config1';
 
 function App() {
-  // const navigate=useNavigate()
-//   const data=useSelector((item)=>item.pro.product)
-//   const dispatch=useDispatch()
-//  const [datas,setdatas]=useState([])
-//  useEffect(()=>{
-//   dispatch(getData())
-//   setdatas(data)
-//  })
+  const [user, setUser] = useState()
+ 
 const loading=useSelector((item)=>item.productss.loading)
 const dispatch=useDispatch()
 
 
 useEffect(()=>{
+  const reload=onAuthStateChanged(auth,(currentuser)=>{
+
+    setUser(currentuser);
+  })
 dispatch(getData())
 
 },[dispatch])
@@ -105,28 +88,37 @@ dispatch(getData())
 
 
      <HashRouter> 
+  
     <Footerss/> 
     <Navbarlogin/>
-   
+    
   
      
   <Container className='w1' >
-     
+  <ToastContainer
+   style={{
+   
+    zIndex: 100000, // التأكد من أن التوست فوق كل العناصر
+  }}/>
 <Routes>
-<Route path='/' element={ <Homepage/>}/>
 <Route path='/login' element={ <Loginpage/>}/>
 <Route path='/register' element={ <Register/>}/>
 <Route path='/reset' element={ <Reset/>}/>
+
+  <Route  element={
+    <ProtectLinked/>
+  }>
+<Route path='/' element={ <Homepage/>}/>
+
 <Route path='/counterproducts' element={ <Oneproducts />}/>
 <Route path='/searching' element={ <Searching />}/>
 <Route path='/more' element={ <Moree title={"الاكثر مبيعا"}/>}/>
 <Route path='/cart' element={ <Cart />}/>
 <Route path='/posts' element={ <Posts/>}/>
 <Route path='/cart/checkout' element={ <Checkout/>}/>
-{/* <Route path='/admin/products/orders'  element={ <Order/>}/> */}
+<Route path='/admin/products/orders'  element={ <Order/>}/>
 <Route path='*' element={<Navigate to='/' />} />
-{/* <Route path='/admin/cart/payment' element={ <Payment/>}/> */}
-
+<Route path='/admin/cart/payment' element={ <OrderForm/>}/>
 <Route
           path="/admin/products"
           element={
@@ -135,7 +127,7 @@ dispatch(getData())
             
           }
         />
-
+        
 <Route
           path="/admin/products/createproduct"
           element={
@@ -144,6 +136,18 @@ dispatch(getData())
             
           }
         />
+  <Route
+          path="/admin/products/edit/:id"
+          element={
+           
+              <Editproduct />
+            
+          }
+        /> 
+  </Route>
+
+
+
         {/* <Route
           path="/cart/payment"
           element={
@@ -152,14 +156,7 @@ dispatch(getData())
             
           }
         /> */}
-        <Route
-          path="/admin/products/edit/:id"
-          element={
-           
-              <Editproduct />
-            
-          }
-        /> 
+      
 
 </Routes>
 

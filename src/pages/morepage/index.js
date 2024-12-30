@@ -16,15 +16,15 @@ export default function Moree({title}){
     console.log(data)})
 
     return(<Container>
-        <Row className='d-flex justify-content-between my-'>
+        <Row className='d-flex justify-content-center '>
          
     
    
    
-    <Subtitle title={title} />
+   
     
     {data.map((item)=>{
-        if(item.fame==="yes"){
+        if(item.fame===true){
             return(
           <Cardproduct key={item.id} img={item.images} title={item.title} price={item.price} scope={item.scope} item={item}/>
           

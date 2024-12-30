@@ -20,11 +20,11 @@ export default function Oneproducts(){
   
 //   },[])
   const cat= new Set(data.map((item)=>item.category));
-  const des= new Set(data.map((item)=>item.desc))
+  const des= new Set(data.map((item)=>item.description))
 return(
 
   <Container>
-    <Row className='d-flex justify-content-between my-'>
+    <Row className='d-flex justify-content-center '>
      
 
 <div className="text-center fs-">{cat} </div>

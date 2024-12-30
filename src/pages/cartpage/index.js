@@ -102,7 +102,7 @@ const   totalPrice = carts.reduce((acc, cart) => {
                                 <tr key={cart.id}>
                                     {/* <th scope="row text-center">{ }</th> */}
                                     <td>
-                                        <img alt="..." src={"https://json-server-6-yt8p.onrender.com/" + cart.images} style={{ width: "35px", height: "50px" }} name="image"/> </td>
+                                        <img alt="..." src={"https://json-server-6-yt8p.onrender.com/public/images/" + cart.images} style={{ width: "35px", height: "50px" }} name="image"/> </td>
                                     <td className="tot" style={{width:"190px",fontSize:"12px"}}>{cart.title}</td>
                                     <td style={{fontSize:"12px",width:"10px"}}>{cart.price} EG</td>
                                     <td className=" " style={{ height: "20px" }}>
@@ -134,13 +134,13 @@ const   totalPrice = carts.reduce((acc, cart) => {
                         ))}
 
                     </table>
-<div>
+{/* <div>
 <p style={{fontSize:"20px",fontWeight:"700"}}>
     الدفع عند الإستلام 
     يرجي اخد اسكرين للطلبات ثم الضغط علي زر <span style={{color:"red"}}>التواصل </span>
 </p>
 
-</div>
+</div> */}
                     <div className='box mx'>
                         <div className='total-price' >
                             <h2>Total Price : {totalPrice} EG</h2>
@@ -149,10 +149,10 @@ const   totalPrice = carts.reduce((acc, cart) => {
                             {/* <button type="button" class="btn btn-danger" onClick={() => {
                                 dispatch(CLEAR_CART())
                             }}>Clear Cart</button> */}
-                <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'> <button type="button" class="btn btn-success mx-2 d-flex"  > <span style={{marginLeft:"6px"}}></span>التواصل   <i class="fa-brands fa-whatsapp"></i></button></a>
+                <Link to={"/admin/cart/payment"} className="btn btn-success  mx-2 d-flex" ><span style={{marginLeft:"6px"}}></span>send Order  </Link>
                         </div>
                     </div>
-                    <div className="my-4"><Link to={'/'} type="button" class="btn btn-success">اضافة منتج اخر </Link></div>
+                    <div className="my-4"><Link to={'/'} type="button" class="btn btn-success">Add New Product </Link></div>
                 </div>
                 : <div className="container empty-cart d-flex flex-culom">
                     {/* <div className="img"><img src={logo} style={{width:"400px"}} alt="..."/></div> */}

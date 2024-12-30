@@ -17,7 +17,7 @@ export function Hompeproducts({btntitle,title}){
     // },[dispatch])
     return(
 
-<Row className='d-flex justify-content-between my-'>
+<Row className='d-flex justify-content-center'>
 
 
 
@@ -25,7 +25,7 @@ export function Hompeproducts({btntitle,title}){
  title={title} btntitle={btntitle}/>
 
 {products.map((item)=>{
-  if(item.fame==="yes"){  
+  if(item.fame===true){  
     if(item.num<=6)
         {
             return(<>

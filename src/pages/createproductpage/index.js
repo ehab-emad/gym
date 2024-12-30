@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getData1 } from "../../store/gategoryslic1";
+import { toast } from "react-toastify";
 // import { getData1 } from "../../store/gatogeryslic";
 
 export default function Createproducts(){
@@ -53,6 +54,7 @@ async function handlesubmit(event){
     })
     // const data =await res.json()
     if(res.ok){
+toast.success("You created new Product successfully")
 
         native("/admin/products")
       

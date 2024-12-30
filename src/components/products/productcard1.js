@@ -16,7 +16,7 @@ function Cardproduct({img,title,price,scope,item}) {
     xl="2"
     md="4"
     xs="6"
-    className='py-3'>
+    className='py-3 mx-2'>
        <Link onClick={()=>dispatch(addPost(item))} style={{textDecoration:"none"}} to={'/posts'}> <Card className='card-styling  d-flex flex-column' style={{height:"330px"}}>
       <Card.Img style={{height:"40%",width:"100%"}}src={"https://json-server-6-yt8p.onrender.com/public/images/" + img } alt='...'/>
       <Card.Body>

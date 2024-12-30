@@ -21,11 +21,11 @@ export function Catogreycard({img,cat,i}){
    
     },[])
     return( 
-        <Row className='d-flex  my-2'>
+        <Row className='d-flex  my-5' >
         
         
         
-        <Subtitle title="الاصناف"  pathtext='/allgatogray'/>
+        {/* <Subtitle title="الاصناف"  pathtext='/allgatogray'/> */}
     {categories.map((item)=>{
         return(
             <Col key={item.id} xs="6" 
