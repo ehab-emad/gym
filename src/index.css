@@ -199,6 +199,8 @@ z-index: 12;
   width: 35px;}
   .app-styling{
       position: relative;
+      height: 100vh; /* طول الحاوية يساوي الشاشة */
+      overflow-y: scroll; 
       z-index: 0;
   }
   .p-text{
@@ -1079,7 +1081,7 @@ padding: 0px;
           height: fit-content;
             
           }
-          nav-style{
+         .nav-style{
             z-index: 33;
     top: 39px;
     position: fixed;
@@ -1424,7 +1426,8 @@ color: #e66836;
 display: none;
 }
 .w1{
-  margin-top: 131px;
+  padding-top: 131px;
+  background: linear-gradient(to bottom, red,black);
 }
 .half1,.half2{
   display: flex; justify-content: space-between;
@@ -1436,9 +1439,12 @@ display: none;
   padding: 4px;
   margin-right: 5px;
 }
-.ss,.nav-style{
+.nav-style{
   z-index: 99900;
-  background-color: rgb(56 71 157);;
+  background:linear-gradient(to bottom, red, black);
 }.nav-style{
   position: fixed;
+}
+.ss{
+  z-index: 99900;
 }

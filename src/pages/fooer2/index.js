@@ -2,10 +2,11 @@ import { Col, Container, Row } from "react-bootstrap";
 import logo from '../../images/logo.jpg'
 export default function Footer1(){
     return(
-<div>
+<div style={{backgroundColor:"#111111"}}>
 <Container >
-<Row className="m-5" >
-    <img src={logo}  style={{width:"100%",height:"450px"}} alt="...."/>
+<img src={logo}  style={{width:"100%",height:"450px"}} alt="...."/>
+<Row className="" >
+   
     <h2 style={{fontSize:"14px" ,margin:"10px 3px"}}>مش بنقول اننا ارخص سعر ولكن الاكيد أننا بنوفر اضمن منتج  أصلي</h2>
   <Col sm="6"
   lg="3"

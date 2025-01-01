@@ -39,6 +39,7 @@ import { Container } from "react-bootstrap";
 // import Editproduct from "./components/admin/editproducts1";
 import { getData } from "./store/createslic1";
 import Homepage from "./pages/hompepage/index";
+import './App.css'
 // import Loginpage from "./pages/loginpage/index";
 import Register from "./pages/registerpage/index";
 import Reset from "./pages/resetpage/index";
@@ -59,6 +60,7 @@ import { ProtectLinked } from './components/protectComponents';
 import { ToastContainer } from 'react-toastify';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firbase/config1';
+import Appp from './components/block';
 
 function App() {
   const [user, setUser] = useState()
@@ -79,7 +81,7 @@ dispatch(getData())
 <>
 {console.log(loading)}
 {false?
- <div className="loading"><img className="animated-span" src={logo} alt='.....'/></div>:<div className='app'>
+ <div className="loading"><img className="animated-span" src={logo} alt='.....'/></div>:<div className='apps'>
 
     
 <div className='whatsapp'> <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'><i class="fa-brands fa-whatsapp"></i></a></div>
@@ -91,7 +93,7 @@ dispatch(getData())
   
     <Footerss/> 
     <Navbarlogin/>
-    
+    {/* <Appp/> */}
   
      
   <Container className='w1' >
@@ -105,9 +107,9 @@ dispatch(getData())
 <Route path='/register' element={ <Register/>}/>
 <Route path='/reset' element={ <Reset/>}/>
 
-  <Route  element={
+  {/* <Route  element={
     <ProtectLinked/>
-  }>
+  }> */}
 <Route path='/' element={ <Homepage/>}/>
 
 <Route path='/counterproducts' element={ <Oneproducts />}/>
@@ -144,7 +146,7 @@ dispatch(getData())
             
           }
         /> 
-  </Route>
+  {/* </Route> */}
 
 
 

@@ -1,7 +1,12 @@
 .App {
   text-align: center;
 }
+.apps{
 
+
+  background: linear-gradient(to bottom, red, yellow);
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -38,4 +43,27 @@
 }
 .Orderform1{
   border: 6px solid red;
+}
+/* تخصيص شريط التمرير */
+body {
+  scrollbar-width: thin; /* دعم لمتصفح Firefox */
+  scrollbar-color: #cc0000 #000; /* لون شريط التمرير والخلفية لمتصفح Firefox */
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* عرض شريط التمرير */
+}
+
+body::-webkit-scrollbar-track {
+  background: #000; /* لون الخلفية (أسود) */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #cc0000; /* لون شريط التمرير (أحمر) */
+  border-radius: 10px; /* حواف دائرية لشريط التمرير */
+  border: 2px solid #000; /* حد أسود */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #8b0000; /* لون أغمق عند التحويم */
 }

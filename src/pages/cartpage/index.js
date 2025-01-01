@@ -78,12 +78,12 @@ const   totalPrice = carts.reduce((acc, cart) => {
 
     return (
         <>
+<button className="btn btn-info">my orders</button>
 
 
             {carts.length > 0 ?
 
                 <div className='  '>
-
                     <table  class="table table-striped ">
                         <thead>
                             <tr>

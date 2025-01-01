@@ -5,28 +5,11 @@ import { getData1 } from "../../store/fetchslic1";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Order(){
-    function deleteorder(id){
-        fetch('https://json-server-6-yt8p.onrender.com/orders/'+ id,{
-            method:"DELETE"
-        }).then(Response=>{
-            
-            if(!Response.ok){
-                throw new Error()
-              
-            }
-            dispatch(getData1())
-           
-        })
-   
-        .catch(erorr=>{
-            alert("unable to delete the product details")
-        })
-    }
+export default function myOrder(){
+
     const dispatch=useDispatch()
     const order =useSelector((i)=>i.ord.orders)
-    const products =useSelector((i)=>i.ord.products)
-    const parsedData = Array.isArray(order.additional_data) 
+
     ? order.additional_data 
     : typeof additional_data === 'string' 
     ? JSON.parse(order.additional_data) 
@@ -76,7 +59,7 @@ export default function Order(){
             <div className="col-sm-8">
             <input className="form-control"  value={item.phonenumber} readOnly/>
             <span className="text-danger"></span>
-     
+            
             </div>
             </div>
             <div className="row mb-3">
@@ -136,14 +119,6 @@ export default function Order(){
           <button className="btn btn-danger" onClick={()=>{
             deleteorder(item.id)
           }}>delete order</button>
-            <div className="row my-3 ">
-            <label className="col-sm-4 col-form-label">created at</label>
-            <div className="col-sm-8">
-            <input className="form-control" name="cartQuantity" value={item.created_at} readOnly/>
-            <span className="text-danger"></span>
-            
-            </div>
-            </div>
             
             </form>)
             })

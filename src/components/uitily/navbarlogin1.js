@@ -107,7 +107,7 @@ import { searchings } from '../../store/createslic1';
       };    
        const carts = useSelector((state) => state.carts.cartItems)
   return (
-    <Navbar expand="lg" className="bg-dark nav-style" style={{width:"100%",padding:" 0px 00px "}}>
+    <Navbar expand="lg" className=" nav-style" style={{width:"100%",padding:" 0px 00px "}}>
       <div className='cun' >
        
           

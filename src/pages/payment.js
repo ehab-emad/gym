@@ -41,6 +41,7 @@ const OrderForm = () => {
       setResponse(res.data);
       toast.success("You  Submitted successfully")
       
+      localStorage.setItem('myOrder',formData);
     
       localStorage.removeItem('cartItems');
       dispatch(CLEAR_CART())
