@@ -27,6 +27,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { searchings } from '../../store/createslic1';
 
 
+
    
     function Navbarlogin() {
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
@@ -106,8 +107,10 @@ import { searchings } from '../../store/createslic1';
           });
       };    
        const carts = useSelector((state) => state.carts.cartItems)
-  return (
+  return ( 
+
     <Navbar expand="lg" className=" nav-style" style={{width:"100%",padding:" 0px 00px "}}>
+    
       <div className='cun' >
        
           
@@ -171,7 +174,9 @@ import { searchings } from '../../store/createslic1';
         </Navbar.Brand>
            </div>
       </div>
+     
     </Navbar>
+ 
   );
 }
 

@@ -20,9 +20,9 @@ import logo from './images/logo.jpg'
 import { useDispatch, useSelector } from "react-redux";
 import Footerss from "./components/uitily/footer1";
 import Navbarlogin from "./components/uitily/navbarlogin1";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import { getData } from "./store/createslic1";
-import { HashRouter, Navigate, Route, Routes,useNavigate} from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes,useLocation,useNavigate} from "react-router-dom";
 import { Container } from "react-bootstrap";
 // import Homepage from "./pages/hompepage/homepage1";
 // import Loginpage from "./pages/loginpage/loginpage1";
@@ -50,6 +50,8 @@ import Posts from "./pages/postpage/index";
 import Checkout from "./pages/checkoutpage/index";
 import Order from "./components/admin/order1";
 import Admin from "./pages/adminpage/index";
+import { AnimatePresence, motion } from "framer-motion";
+
 import Createproducts from "./pages/createproductpage/index";
 import Editproduct from "./pages/editproductspage/index";
 import Footer1 from "./pages/fooer2/index";
@@ -61,27 +63,37 @@ import { ToastContainer } from 'react-toastify';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firbase/config1';
 import Appp from './components/block';
+import Advertisement from './components/Advertisement ';
+import ScrollToTop from './components/uitily/scroll_top';
 
 function App() {
   const [user, setUser] = useState()
- 
+  const location = useLocation();
+  const appRef = useRef(); // مرجع للتحكم في عنصر الـ div الأساسي
+ const pageTransition = {
+  initial: { opacity: 0, x: 100 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0, x: -100 },
+  transition: { duration: 0.5 },
+};
 const loading=useSelector((item)=>item.productss.loading)
 const dispatch=useDispatch()
+useEffect(() => {
+  dispatch(getData());
+}, [1]);
 
-
-useEffect(()=>{
-  const reload=onAuthStateChanged(auth,(currentuser)=>{
-
-    setUser(currentuser);
-  })
-dispatch(getData())
-
-},[dispatch])
+// useEffect(() => {
+//   document.documentElement.scrollTo({
+//     top: 0,
+//     behavior: "smooth", // تمرير سلس
+//   });
+// }, [location.pathname]);
   return (
 <>
-{console.log(loading)}
-{false?
- <div className="loading"><img className="animated-span" src={logo} alt='.....'/></div>:<div className='apps'>
+<ScrollToTop/>
+{/* {console.log(location.pathname)} */}
+{loading?
+ <div className="loading"><img className="animated-span" src={logo} alt='..pp..'/></div>:<div className='apps'  >
 
     
 <div className='whatsapp'> <a href='https://wa.me/message/CBRFPF4OWOR3I1?src=qr'><i class="fa-brands fa-whatsapp"></i></a></div>
@@ -89,34 +101,37 @@ dispatch(getData())
 
 
 
-     <HashRouter> 
+     {/* <HashRouter>  */}
   
     <Footerss/> 
+
     <Navbarlogin/>
     {/* <Appp/> */}
-  
-     
-  <Container className='w1' >
+    {/* <ScrollToTop/> */}
+  <div className='w1' >
   <ToastContainer
    style={{
    
     zIndex: 100000, // التأكد من أن التوست فوق كل العناصر
   }}/>
-<Routes>
+
+    <AnimatePresence mode="wait">
+   
+<Routes location={location} key={location.pathname}>
 <Route path='/login' element={ <Loginpage/>}/>
 <Route path='/register' element={ <Register/>}/>
 <Route path='/reset' element={ <Reset/>}/>
 
-  {/* <Route  element={
-    <ProtectLinked/>
-  }> */}
+  {/* <Route  element={ */}
+    {/* // <ProtectLinked/> */}
+  {/* } */}
 <Route path='/' element={ <Homepage/>}/>
 
-<Route path='/counterproducts' element={ <Oneproducts />}/>
+<Route path='/counterproducts' element={ <motion.div {...pageTransition}> <Oneproducts /></motion.div>}/>
 <Route path='/searching' element={ <Searching />}/>
-<Route path='/more' element={ <Moree title={"الاكثر مبيعا"}/>}/>
+<Route path='/more' element={ <motion.div {...pageTransition}><Moree title={"الاكثر مبيعا"}/></motion.div>}/>
 <Route path='/cart' element={ <Cart />}/>
-<Route path='/posts' element={ <Posts/>}/>
+<Route path='/posts' element={  <motion.div {...pageTransition}><Posts/></motion.div>}/>
 <Route path='/cart/checkout' element={ <Checkout/>}/>
 <Route path='/admin/products/orders'  element={ <Order/>}/>
 <Route path='*' element={<Navigate to='/' />} />
@@ -161,14 +176,15 @@ dispatch(getData())
       
 
 </Routes>
+</AnimatePresence>
 
+</div>
 
-</Container>
-
+<Advertisement/>
 
 <Footer1/>
 
-</HashRouter> 
+{/* </HashRouter>  */}
        
      </div>
 </div> }

@@ -78,7 +78,7 @@ const   totalPrice = carts.reduce((acc, cart) => {
 
     return (
         <>
-<button className="btn btn-info">my orders</button>
+{/* <button className="btn btn-info">my orders</button> */}
 
 
             {carts.length > 0 ?

@@ -17,7 +17,7 @@ export function Hompeproducts({btntitle,title}){
     // },[dispatch])
     return(
 
-<Row className='d-flex justify-content-center'>
+<Row className='d-flex justify-content-start '>
 
 
 
@@ -26,7 +26,7 @@ export function Hompeproducts({btntitle,title}){
 
 {products.map((item)=>{
   if(item.fame===true){  
-    if(item.num<=6)
+    if(item.num<=11)
         {
             return(<>
 <Cardproduct key={item.id} img={item.images} title={item.title} price={item.price} scope={item.scope} item={item}/>

@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addPost } from '../../store/postslic1';
 // import { addPost } from '../../store/postsslic';
+import { motion } from "framer-motion";
 
-
-function Cardproduct({img,title,price,scope,item}) {
+function Cardproduct({img,index,title,price,scope,item}) {
     const dispatch=useDispatch()
   return (
     <Col 
@@ -16,8 +16,15 @@ function Cardproduct({img,title,price,scope,item}) {
     xl="2"
     md="4"
     xs="6"
-    className='py-3 mx-2'>
-       <Link onClick={()=>dispatch(addPost(item))} style={{textDecoration:"none"}} to={'/posts'}> <Card className='card-styling  d-flex flex-column' style={{height:"330px"}}>
+    className='my-1'>
+       <Link onClick={()=>dispatch(addPost(item))} style={{textDecoration:"none"}} to={'/posts'}> 
+       <motion.div
+        key={item}
+        initial={{ opacity: 0, y: 10 ,x:12}}
+        animate={{ opacity: 1, y: 0  ,x:0}}
+        transition={{ delay: index * 0.5 }}
+      >
+         <Card className='card-styling  d-flex flex-column' style={{height:"330px"}}>
       <Card.Img style={{height:"40%",width:"100%"}}src={"https://json-server-6-yt8p.onrender.com/public/images/" + img } alt='...'/>
       <Card.Body>
        <div className='d-flex justify-content-between '> <Card.Title className='tit' style={{fontSize:"12px",height:"72px"}}>{title}</Card.Title>
@@ -31,7 +38,13 @@ function Cardproduct({img,title,price,scope,item}) {
         </Card.Text>
         <button className='btn-styl'>Details</button>
       </Card.Body>
-    </Card></Link>
+    </Card>
+      </motion.div>
+      
+    
+    
+    
+    </Link>
     </Col>
   );
 }

@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
 import { useDispatch, useSelector } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ADD_TO_CART } from '../../store/cartslic1'
 
 
 
 export default function Posts() {
+     const { pathname } = useLocation();
+      
+        useEffect(() => {
+          window.scrollTo(0, 0); // يرجع الصفحة إلى الأعلى
+        }, [pathname]); // يُشغل عند تغيير المسار
+      
     // const carts = useSelector((state) => state.carts)
     const posts = useSelector((state) => state.posts.postitems)
     console.log(posts)

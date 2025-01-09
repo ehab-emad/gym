@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import logo from '../../images/logo.jpg'
 export default function Footer1(){
     return(
-<div style={{backgroundColor:"#111111"}}>
+<div style={{backgroundColor:"#111111",marginTop:"10px ",padding:"20px"}}>
 <Container >
 <img src={logo}  style={{width:"100%",height:"450px"}} alt="...."/>
 <Row className="" >

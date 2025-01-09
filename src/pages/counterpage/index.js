@@ -1,49 +1,46 @@
 import { Container, Row } from "react-bootstrap";
-
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Subtitle } from "../../components/uitily/subtitle1";
-import {  getData } from "../../store/createslic1";
+import { getData } from "../../store/createslic1";
 import Cardproduct from "../../components/products/productcard1";
-// import Cardproduct from "../components/products/producttcard";
+import { useLocation } from "react-router-dom";
 
-export default function Oneproducts(){
-  const data=useSelector((item)=>item.productss.counterItems)
-  const dispatch=useDispatch()
+export default function Oneproducts() {
+  const { pathname } = useLocation();
+  const dispatch = useDispatch();
+  const data = useSelector((item) => item.productss.counterItems);
+
+  // إعادة الإسكرول للأعلى عند تغيير المسار
+  // useEffect(() => {
+  //   console.log("Current pathname:", pathname); // طباعة المسار الحالي
+  //   document.body.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+    
+  //   console.log("Scrolled to top"); // التأكد من استدعاء الإسكروول
+  // }, [pathname]);
   
 
-//   useEffect(()=>{
-//   dispatch(getData())
+  // جلب البيانات عند تحميل الصفحة
 
-// console.log(data)
-  
-//   },[])
-  const cat= new Set(data.map((item)=>item.category));
-  const des= new Set(data.map((item)=>item.description))
-return(
-
-  <Container>
-    <Row className='d-flex justify-content-start '>
-     
-
-{/* <div className="text-center fs-">{cat} </div> */}
-{/* <p className="p-text">{des}</p> */}
-
-<Subtitle title />
-
-{data.map((item)=>{
-  return(
-    
-    
-<Cardproduct key={item.id} img={item.images} title={item.title} price={item.price} scope={item.scope} item={item}/>
-
-  )
-})}
-
-
-</Row></Container>
-)
-
-
+  return (
+    <Container>
+      <Row className="d-flex justify-content-start">
+        <Subtitle title="Products" />
+        {data.map((item, index) => (
+          <Cardproduct
+            key={item.id}
+            index={index}
+            img={item.images}
+            title={item.title}
+            price={item.price}
+            scope={item.scope}
+            item={item}
+          />
+        ))}
+      </Row>
+    </Container>
+  );
 }

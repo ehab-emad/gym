@@ -19,14 +19,14 @@ import { Hompeproducts } from "../../components/home/homecardproduct1";
 export default function Homepage(){
     return(
 <div className="font" style={{minHeight:"670px"}}>
-
+<div  className="container">
 <Sliderhome/>
-<Container>
+
 <Catogreycard/>
-    <Hompeproducts title='الاكثر مبيعا' btntitle='المزيد'/>
+    <Hompeproducts title='الاكثر مبيعا' btntitle='more'/>
    
     
-</Container>
+</div>
 
 </div>
 
